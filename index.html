@@ -6,14 +6,12 @@
   <meta name="description" content="For the best experience, please view on a desktop device.">
   <meta name="keywords" content="resume, chemistry, achievements, internships">
   <title>Resume | Ferdynand Eugene Nathanael</title>
-
   <!-- Preload fonts for performance -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Roboto:wght@300;400&display=swap" as="style">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <style>
     body {
       margin: 0;
@@ -377,9 +375,7 @@
     }
   </style>
 </head>
-
 <body>
-
 <header>
   <nav>
     <a href="#main-content" class="sr-only">Skip to main content</a>
@@ -392,7 +388,6 @@
     </div>
   </nav>
 </header>
-
 <section class="hero">
   <div>
     <img src="https://image2url.com/r2/default/images/1769780635691-44883ca9-35a6-4489-82ac-05d00688e204.jpg" alt="Profile Photo">
@@ -401,17 +396,13 @@
     <a href="#achievements" class="cta-button">Explore</a>
   </div>
 </section>
-
 <div class="resume-container">
-
   <aside class="sidebar" id="contact">
   <img
     src="https://image2url.com/r2/default/images/1769780635691-44883ca9-35a6-4489-82ac-05d00688e204.jpg"
     alt="Profile Photo"
   >
-
   <h3>Contact</h3>
-
   <div class="contact-list">
     <a
       href="https://mail.google.com/mail/?view=cm&fs=1&to=ferdynandeugenenathanael@gmail.com"
@@ -421,7 +412,6 @@
       <i class="fas fa-envelope"></i>
       <span>Email</span>
     </a>
-
     <a
       href="https://wa.me/6281328156826"
       class="contact-link"
@@ -436,9 +426,7 @@
      I'm just an average person who tries my best to keep on improving.
     </p>
   </aside>
-
   <main>
-
     <section id="skills">
       <h2>Skills</h2>
       <div class="cards-grid">
@@ -464,9 +452,17 @@
             </div>
           </div>
         </div>
+        <div class="card">
+          <h3>Professional Competencies</h3>
+          <p>
+            - Effective Communication Skills<br>
+            - Strong Organizational Abilities<br>
+            - Problem Solving Skills<br>
+            - Team Collaboration & Initiative
+          </p>
+        </div>
       </div>
     </section>
-
     <section id="achievements">
       <h2>Achievements</h2>
       <div class="cards-grid">
@@ -481,11 +477,68 @@
       </div>
     </section>
 
-    <section id="experience">
-      <h2>Social Activities & Experience</h2>
-      <div class="cards-grid">
-        <div class="card"><h3>Co-Founder</h3><p><strong>HISE Teaching</strong><br>Built a student-led organization that provides paid and voluntary academic support.</p></div>
-        <div class="card"><h3>Intern – Construction Division</h3><p><strong>PT PLN (Persero)</strong><br>Observed infrastructure projects, assisted engineers, attended K3 safety briefings, and redesigned an informational poster.</p></div>
-        <div class="card"><h3>Intern – IT Division</h3><p><strong>PT SABA INDOMEDIKA</strong><br>Assisted troubleshooting, system observation, and produced a final improvement proposal video.</p></div>
-        <div class="card"><h3>OSIS – Religious Affairs Division</h3><p><strong>Student Council 2024/2025 term</strong><br>Organized religious activities and fostered a positive school environment.</p></div>
-        <div class="card"><h
+
+<section id="experience">
+  <h2>Social Activities & Experience</h2>
+  <div class="cards-grid">
+    <div class="card"><h3>Co-Founder</h3><p><strong>HISE Teaching</strong><br>Built a student-led organization that provides paid and voluntary academic support.</p></div>
+    <div class="card"><h3>Intern – Construction Division</h3><p><strong>PT PLN (Persero)</strong><br>Observed infrastructure projects, assisted engineers, attended K3 safety briefings, and redesigned an informational poster.</p></div>
+    <div class="card"><h3>Intern – IT Division</h3><p><strong>PT SABA INDOMEDIKA</strong><br>Assisted troubleshooting, system observation, and produced a final improvement proposal video.</p></div>
+    <div class="card"><h3>OSIS – Religious Affairs Division</h3><p><strong>Student Council 2024/2025 term</strong><br>Organized religious activities and fostered a positive school environment.</p></div>
+    <div class="card"><h3>OSIS – Social & Entrepreneurship</h3><p><strong>Student Council 2023/2024 term</strong><br>Secured sponsorships and organized fundraisings for events.</p></div>
+    <div class="card"><h3>Volunteer</h3><p><strong>Leo Club Jakarta Humanita</strong><br>Participated in humanitarian and fundraising activities.</p></div>
+    <div class="card"><h3>Volunteer – Multimedia</h3><p><strong>SIDDHI</strong><br>Operated vMix and audio interface for content creation.</p></div>
+    <div class="card"><h3>Basketball Team Member</h3><p><strong>Wardaya High School</strong><br>Represented school in inter-school competitions.</p></div>
+  </div>
+</section>
+
+  </main>
+</div>
+<script>
+  const OFFSET = 90; // height of your fixed header
+  const DURATION = 800; // ms → increase for slower scroll
+function smoothScroll(targetId) {
+const target = document.querySelector(targetId);
+if (!target) return;
+
+
+const start = window.pageYOffset;
+const targetPosition =
+  target.getBoundingClientRect().top + start - OFFSET;
+
+const startTime = performance.now();
+
+function scroll(currentTime) {
+  const elapsed = currentTime - startTime;
+  const progress = Math.min(elapsed / DURATION, 1);
+
+  // easeInOutCubic (smooth + elegant)
+  const ease =
+    progress < 0.5
+      ? 4 * progress * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+  window.scrollTo(0, start + (targetPosition - start) * ease);
+
+  if (progress < 1) requestAnimationFrame(scroll);
+}
+
+requestAnimationFrame(scroll);
+
+}
+
+
+document.querySelectorAll('nav a, .cta-button').forEach(link => {
+link.addEventListener('click', e => {
+const href = link.getAttribute('href');
+if (href.startsWith('#')) {
+e.preventDefault();
+smoothScroll(href);
+}
+});
+});
+</script>
+
+
+</body>
+</html>
